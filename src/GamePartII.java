@@ -1,6 +1,7 @@
 import java.awt.GridLayout;
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class GamePartII {
 
@@ -35,15 +36,15 @@ public class GamePartII {
 		int number = 0;
 		boolean isNumber;
 		do {
-			System.out.println("Plese enter a number from 1 to 9: ");
-			if (input.hasNextInt()) 
+			//number = Integer.parseInt(JOptionPane.showInputDialog("Plese enter a number from 1 to 9: "));
+			if (number > 0 || number < 10) 
 			{
-				number = input.nextInt();
+				number = Integer.parseInt(JOptionPane.showInputDialog("Plese enter a number from 1 to 9: "));
 				isNumber = true;
 				}
 				else
 				{
-					System.out.println("invalid input!! ");
+					JOptionPane.showMessageDialog(null, "invalid input!! ");
 					isNumber = false;
 					input.next();
 
@@ -68,12 +69,12 @@ public class GamePartII {
 		 	 grid [0][0] + grid[1][1] + grid[2][2] == 15 &&
         	 grid [2][0] + grid[1][1] + grid[0][2] == 15)
         {
-        	System.out.println("Congratulations you can now navigate safely off the island");
+        	JOptionPane.showMessageDialog(null, "Congratulations you can now navigate safely off the island");
             return true;
         }
         else
         {
-        	System.out.println("Sorry you are stuck on the island forever and will soon starve");
+        	JOptionPane.showMessageDialog(null, "Sorry you are stuck on the island forever and will soon starve");
             return false;
         }
 
