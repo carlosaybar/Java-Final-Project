@@ -1,4 +1,4 @@
-DO or DIE!!
+<font color="red">DO or DIE!!!</font>
 
 Two people are stuck on an island, there is a boat that can carry one of them off the island. The people will test their luck in the first part of the game, by participating in the random game. Each random number has a specific score that will be added to each player after each turn. At the end of the random game, there will be a score for the first player and a score for the other player. The person with the highest score makes it to where the boat is, however, in order to unlock the boat that player must come up with 9 numbers from 0-9 using each number only once. The player must arrange these nine numbers on a 3X3 grid in a way that the sum of the rows, columns, and diagonals always add up to 15. If the player is able to come up with this combination, thus unlocking the boat, he will be able to flee the island and the other player will be stuck on the island forever. If the player is unable to unlock the boat, he will starve on the island along with the other player.
 
