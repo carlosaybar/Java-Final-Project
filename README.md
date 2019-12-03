@@ -24,7 +24,7 @@ Below I have included the three most important chunks of code for my game:
 These are the steps taken to pass the nine numbers into the two dimensional array grid
 
 These chunk of code below checks to see if the player won
-
+![Screenshot1]
 How the grid will be populated and displayed
 
 ##Installation
