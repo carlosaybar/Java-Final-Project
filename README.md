@@ -7,34 +7,34 @@ Motivation
 There are many games that either test your luck or your strategies. However, there are few that test both. This is why I decided to come up with this game that would test a player’s luck as well as his critical thinking skills and strategies. 
 Tech/framework used
 
-This game was built using
+### This game was built using
 ===
 * Eclipse
 
-Features
+### Features
 ===
 The features that make my game stand out are:
 * Its levels of difficulty, first the game starts really easy and gets harder as it progresses
 * It enhances your brain to think fast and accurately, by giving its players once chance to come up with the right solution to a difficult problem. 
 * Gives the players time to think and plan his next move by allowing them to see their updated grid every time they input a new number.
 
-Code Example
+### Code Example
 ===
 Below I have included the three most important chunks of code for my game:
 
-** These are the steps taken to pass the nine numbers into the two dimensional array grid
+**These are the steps taken to pass the nine numbers into the two dimensional array grid**
 
 ![Screenshot1](https://user-images.githubusercontent.com/58013489/70016762-39877600-154f-11ea-97fe-8ba95425536a.png)
 
-** These chunk of code below checks to see if the player won
+**These chunk of code below checks to see if the player won**
 
 ![Screenshot2](https://user-images.githubusercontent.com/58013489/70016763-39877600-154f-11ea-9602-fa9c5bbf1181.png)
 
-** How the grid will be populated and displayed
+**How the grid will be populated and displayed**
 
 ![Screenshot3](https://user-images.githubusercontent.com/58013489/70016765-39877600-154f-11ea-95d3-c7f4a732b903.png)
 
-##Installation
+### Installation
 ===
 The libraries imported in order to create this game were:
 * javax.swing.JFrame: sets the size of the frame for the grid
@@ -75,13 +75,13 @@ To play this game, first, go into the Game.java file and press run or debug on t
 ![Screenshot9](https://user-images.githubusercontent.com/58013489/70016772-3a200c80-154f-11ea-9cdf-e8d0d9fa5213.png)
 		
  
-Credits
+### Credits
 ===
 * https://gluonhq.com/products/javafx/
 * https://docs.oracle.com/javase/tutorial/uiswing/layout/grid.html
 * Classroom textbook and previous codes
 
-License
+### License
 ===
 STU © Carlos Aybar De Los Santos
 
