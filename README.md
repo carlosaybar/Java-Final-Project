@@ -1,8 +1,8 @@
-Project title
+DO or DIE!!
 ===
 Two people are stuck on an island, there is a boat that can carry one of them off the island. The people will test their luck in the first part of the game, by participating in the random game. Each random number has a specific score that will be added to each player after each turn. At the end of the random game, there will be a score for the first player and a score for the other player. The person with the highest score makes it to where the boat is, however, in order to unlock the boat that player must come up with 9 numbers from 0-9 using each number only once. The player must arrange these nine numbers on a 3X3 grid in a way that the sum of the rows, columns, and diagonals always add up to 15. If the player is able to come up with this combination, thus unlocking the boat, he will be able to flee the island and the other player will be stuck on the island forever. If the player is unable to unlock the boat, he will starve on the island along with the other player.
 
-Motivation
+### Motivation
 ===
 There are many games that either test your luck or your strategies. However, there are few that test both. This is why I decided to come up with this game that would test a player’s luck as well as his critical thinking skills and strategies. 
 Tech/framework used
@@ -46,7 +46,7 @@ The libraries imported in order to create this game were:
 * import java.io.PrintWriter: to save the scores into the leaderboard.txt file
 * import java.util.Random: to generate random numbers
 
-How to use?
+### How to use?
 ===
 To play this game, first, go into the Game.java file and press run or debug on the platform that you are using. Remember that there is a two player game, so you can play with a friend or by yourself as long as you provide a name for Player1 and a name for Player2. 
 
