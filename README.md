@@ -68,7 +68,7 @@ To play this game, first, go into the Game.java file and press run or debug on t
 
 5. Here the player will be required to arrange nine numbers from 1-9 on the 3 by three grid in a way that they always add up to 15 diagonally, horizontally, and vertically. The player will have the opportunity to see exactly the numbers he/she is inputting into each square of the grid.
 
-![Screenshot8](https://user-images.githubusercontent.com/58013489/70016771-3a200c80-154f-11ea-8000-fe900614fba7.png)
+![Screenshot8](https://user-images.githubusercontent.com/58013489/70018243-84a38800-1553-11ea-9e27-d44fa6a9763a.png)
  			
 6. After the grid is filled, the game will check to see if the user was able to arrange the numbers correctly. If the player completed the grid correctly, he/she will be able to escape the island, he/she will be stuck forever.
 
