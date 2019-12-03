@@ -25,7 +25,7 @@ These are the steps taken to pass the nine numbers into the two dimensional arra
 
 These chunk of code below checks to see if the player won
 
-![Screenshot1]
+![https://user-images.githubusercontent.com/58013489/70016762-39877600-154f-11ea-97fe-8ba95425536a.png]
 
 How the grid will be populated and displayed
 
