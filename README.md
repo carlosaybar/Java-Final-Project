@@ -22,15 +22,15 @@ Code Example
 ===
 Below I have included the three most important chunks of code for my game:
 
-These are the steps taken to pass the nine numbers into the two dimensional array grid
+**These are the steps taken to pass the nine numbers into the two dimensional array grid
 
 ![Screenshot1](https://user-images.githubusercontent.com/58013489/70016762-39877600-154f-11ea-97fe-8ba95425536a.png)
 
-These chunk of code below checks to see if the player won
+**These chunk of code below checks to see if the player won
 
 ![Screenshot2](https://user-images.githubusercontent.com/58013489/70016763-39877600-154f-11ea-9602-fa9c5bbf1181.png)
 
-How the grid will be populated and displayed
+**How the grid will be populated and displayed
 
 ![Screenshot3](https://user-images.githubusercontent.com/58013489/70016765-39877600-154f-11ea-95d3-c7f4a732b903.png)
 
