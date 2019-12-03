@@ -83,6 +83,6 @@ To play this game, first, go into the Game.java file and press run or debug on t
 
 ### License
 
-STU © Carlos Aybar De Los Santos
+**STU © Carlos Aybar De Los Santos**
 
 
