@@ -51,12 +51,12 @@ To play this game, first, go into the Game.java file and press run or debug on t
 7. After the grid is filled, the game will check to see if the user was able to arrange the numbers correctly. If the player completed the grid correctly, he/she will be able to escape the island, he/she will be stuck forever.
 		
  
-##Credits
+**#Credits
 * https://gluonhq.com/products/javafx/
 * https://docs.oracle.com/javase/tutorial/uiswing/layout/grid.html
 * Classroom textbook and previous codes
 
-##License
+**#License
 STU © Carlos Aybar De Los Santos
 
 
