@@ -1,18 +1,18 @@
 /*
  Carlos Aybar
  Intro to Java
- 10/04/19
- This game is to be played by two people, each one creates a hero and chooses four characteristic, which all have values.
- All the values for each hero is outputed and multiplied by a ramndom number to determine who wins each round.
+ 12/04/19
+ This game is to be played by two people, both players will have the opportunity to take 3 turns.
+ at the end of those three turns, the player's scores will be compared and whoever has the highest avances to the 
+ next round.
+ In the second part, there will only be one player trying to fill in the 3by3 grid in order to win
  */
 
 import javax.swing.JOptionPane;
-import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Random;
 public class Game {
-	//GridDisplay gridDisplay = new GridDisplay();
 	static int Player1Score = 0;
 	static int Player2Score = 0;
 	static int hint = 0;
@@ -24,67 +24,64 @@ public class Game {
 	 */
 	public static void main(String[] Args){
 		//create all the variables in here
-		Scanner input = new Scanner(System.in);
 		Player  plr1 = new Player(); //creates an instance of the Player class called ply1
-		//JOptionPane.showInputDialog("Please enter your name: ");
 		plr1.setName(JOptionPane.showInputDialog("Player1 Name"));
-		//plr1.setName(input.nextLine()); //sets the name for the first player
 		Player plr2 = new Player(); // creates an instance of the Player class called plyr2
 		plr2.setName(JOptionPane.showInputDialog("Player2 Name"));
-		//JOptionPane.showInputDialog("Please enter your name: ");
-		//plr2.setName(input.nextLine()); //sets the name for the second player
-		random(Player1Score, Player2Score, plr1, plr2 , score);
-		winner(Player1Score , Player2Score , plr1 ,  plr2);
+		random(plr1, plr2);
+		winner(plr1 ,  plr2);
 
 	}
 	
 	/**
-	 * 
-	 * @param Player1Score
-	 * @param Player2Score
-	 * @param plr1
-	 * @param plr2
-	 * @param score
+	 * this method sets the turns for each player
+	 * both of them will take three turns in the random game
+	 * each turn will call the turns() method and return a score
+	 * @param plr1 passing in the local variable plr1
+	 * @param plr2 passing in the local variable pl2
 	 */
-	public static void random(int Player1Score, int Player2Score, Player plr1, Player plr2 , int score)
+	public static void random(Player plr1, Player plr2)
 	{
-		Scanner input = new Scanner(System.in); 
-		boolean isValid;
+
+		boolean inValid = false;
 		do {
-			int playerTurn;
-			playerTurn = Integer.parseInt(JOptionPane.showInputDialog("Player1 enter 1 for your turn and Player2 enter 2:"));
-			//JOptionPane.showInputDialog("Plese enter either 1 or 2: ");
-			if (playerTurn ==1 || playerTurn == 2) 
+		try {
+		//do {
+			int playerTurn = Integer.parseInt(JOptionPane.showInputDialog("Press 1 or 2 to start playing"));
+			if (playerTurn < 1 || playerTurn > 3) //checks to see if the user typed either 1 or 2
 				{
-				for(int i = 1; i < 6; i++)
+				inValid = true; //if the user typed in anything other than 1 or 2, invalid will be true
+				}
+				
+			else
 				{
-					playerTurn = Integer.parseInt(JOptionPane.showInputDialog("Player1 enter 1 for your turn and Player2 enter 2:"));
-					//JOptionPane.showInputDialog("Player1 enter 1 for your turn and Player2 enter 2");
-					//int playerTurn = input.nextInt();
-					Random number = new Random();
-					int hint = number.nextInt(11); 
-
-					if(playerTurn == 1)
+					for(int i = 0; i < 6; i++)
 					{
-						Player1Score = turns(hint , score);
-						Player1Score++;
+						playerTurn = Integer.parseInt(JOptionPane.showInputDialog("Player1 enter 1 for your turn and Player2 enter 2:"));
+						Random number = new Random();
+						int hint = number.nextInt(11);
+
+						if(playerTurn == 1)//when the player enters 1, it will be the 1st player's turn
+						{
+							Player1Score = turns(hint); 
+							Player1Score++;
+						}
+						else if(playerTurn == 2) //when the player enter a two, it will be the second player's turn
+						{
+							Player2Score = turns(hint);
+							Player2Score++;
+						}
 					}
-					else
-					{
-						Player2Score = turns(hint , score);
-						Player2Score++;
-					}
+					inValid = false;
 				}
-				isValid = true;
-				}
-				else
+		}catch(NumberFormatException e) //checks to see if the user inputs anything other than an integer
 				{
-					JOptionPane.showInputDialog("invalid input!! ");
-					isValid = false;
-					input.next();
+					JOptionPane.showMessageDialog(null , "invalid input!! click okay and start over");
+					System.exit(0); //when the user enters a char, string, ir not input the game will close without crashing
 
 				}
-			}while(isValid == false);
+		}while(inValid);
+		
 	}
 	
 	
@@ -94,35 +91,37 @@ public class Game {
 
 	/**
 	 * 
-	 * @param hint
-	 * @return
+	 * @param hint gets the hint/random number generated random() method
+	 * it compares the number generated to one of the switches in this method
+	 * once the random number is matched to one of the cases in the switch
+	 * the score will be returned and added to the appropriate player
+	 * @return returns the score
 	 */
 
-	public static int turns(int hint , int score)
+	public static int turns(int hint)
 	{
-		//int score = 0; 
 		int value = hint;
 		switch(value) {
 		case 1 :
 			JOptionPane.showMessageDialog(null, "You found a shortcut, advanced 25 steps");
-			score += 25;
+			score += 25; //when the random number is 1, this will be added to the player score
 			break;
 		case 2 :
 			
 			JOptionPane.showMessageDialog(null, "Chased by a snake, went back 10 steps");
-			score -= 10;
+			score -= 10; //when the random number is 2, this will be added to the player score
 			break;
 		case 3 :
 			JOptionPane.showMessageDialog(null, "Chased by a tiger, but managed to get 30 steps closer to the boat");
-			score += 30;
+			score += 30; //when the random number is 3, this will be added to the player score
 			break;
 		case 4 :
 			JOptionPane.showMessageDialog(null, "A horse took you 100 steps closer to the boat");
-			score += 100;
+			score += 100; //when the random number is 4, this will be added to the player score
 			break;
 		case 5 :
 			JOptionPane.showMessageDialog(null, "You are lost, rest until you find the way");
-			score += 0;
+			score += 0; //when the random number is 5, this will be added to the player score
 			break;
 		case 6 :
 			JOptionPane.showMessageDialog(null, "It is too dark, you are walking slower! advance 10 steps");
@@ -149,13 +148,13 @@ public class Game {
 	}
 	
 	/**
-	 * 
-	 * @param Player1Score
-	 * @param Player2Score
-	 * @param plr1
-	 * @param plr2
+	 * this method compares player1score and player2score
+	 * the player with the highest score wins and advances
+	 * to the second part of the game
+	 * @param plr1 passing in the local variable plr1
+	 * @param plr2 passing in the local variable pl2
 	 */
-	public static void winner(int Player1Score , int Player2Score , Player plr1 , Player plr2)
+	public static void winner(Player plr1 , Player plr2)
 	{
 		if(Player1Score > Player2Score)
 		{
@@ -163,15 +162,19 @@ public class Game {
 					"\n" + "arrange nine numbers less than 10, " + 
 			 		"\n" + "that on a 3 by 3 grid, always add up to 15"+
 					"\n" + "diagonally, horizontally, and vertically");
+			/*
+			 * this try, creates the LeaderBoard.txt file and
+			 * saves the name of the winer and the his/her score
+			 */
 			try {
-			    FileWriter contacts = new FileWriter ("Contacts.txt" , true);
+			    FileWriter contacts = new FileWriter ("LeaderBoard.txt" , true);
 				PrintWriter outputFile = new PrintWriter(contacts);
 			    outputFile.print(plr1.getName());
+			    outputFile.print(" ");
 			    outputFile.print(Player1Score);
 			    outputFile.print("\n");
 			    outputFile.close();
 			} catch(Exception e) {
-			   // e.printStackTrace();
 			}
 
 		}
@@ -181,20 +184,21 @@ public class Game {
 					"\n" + "arrange nine numbers less than 10, " + 
 			 		"\n" + "that on a 3 by 3 grid, always add up to 15"+
 					"\n" + "diagonally, horizontally, and vertically");
+
 			try {
 			    FileWriter contacts = new FileWriter ("LeaderBoard.txt" , true);
 				PrintWriter outputFile = new PrintWriter(contacts);
 			    outputFile.print(plr2.getName());
+			    outputFile.print(" ");
 			    outputFile.print( Player2Score);
 			    outputFile.print("\n");
 			    outputFile.close();
 			} catch(Exception e) {
-			   // e.printStackTrace();
 			}
 
-		}
-		GridDisplay gridDisplay = new GridDisplay();
-		GamePartII.checkIfWinner(gridDisplay.grid);
+		} 
+		GridDisplay gridDisplay = new GridDisplay(); //calls the gridDisplay method from the GridDisplay class
+		GamePartII.checkIfWinner(gridDisplay.grid); //checks if the player wins after filling in the DO or DIE grid
 	}
 
 
