@@ -13,11 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JButton; //imports JButton library
 import java.awt.GridLayout; //imports GridLayout library
 
-/**
- * 
- * @author Missions
- *
- */
+
 public class GridDisplay {
 	GamePartII GameII = new GamePartII(); 
 	JFrame frame = new JFrame(); //creates frame
@@ -25,7 +21,9 @@ public class GridDisplay {
 	int [] [] grid;
 	
 	/**
-	 * 
+	 * the GridDisplay method sets the frame, creates the grid and 
+	 * calls to the method numbers() from the class GamePartII in
+	 * order to pass the inputs into the grid
 	 */
 	public GridDisplay(){ // this is constructor to build the grid
 		int width = 3;

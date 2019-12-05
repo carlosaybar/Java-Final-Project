@@ -19,8 +19,9 @@ public class Game {
 	static int score = 0;
 	
 	/**
-	 * 
-	 * @param Args
+	 *the object main contains the new instances of the class Player.java
+	 *this is also where the other methods are called in order to get the game
+	 *to execute. 
 	 */
 	public static void main(String[] Args){
 		//create all the variables in here
